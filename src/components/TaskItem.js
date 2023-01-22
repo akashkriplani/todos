@@ -15,6 +15,8 @@ export default class TaskItem extends Component {
 
   deleteTaskItem = () => this.props.deleteTaskItem(this.props.id);
 
+  toggleTaskItem = () => this.props.toggleTaskItem(this.props.id);
+
   handleChange = (event) => this.setState({ task: event.target.value });
 
   handleSubmit = (event) => {
@@ -44,7 +46,12 @@ export default class TaskItem extends Component {
           </>
         ) : (
           <>
-            <td>{this.props.taskItem.task}</td>
+            <td className="task" onClick={this.toggleTaskItem}>
+              <input type="checkbox" readOnly checked={this.props.taskItem.isCompleted} />
+              <span className={this.props.taskItem.isCompleted ? 'completed' : 'in-progress'}>
+                {this.props.taskItem.task}
+              </span>
+            </td>
             <td>
               <button onClick={() => this.setIsEditing(true)}>Edit</button>
               <button onClick={() => this.deleteTaskItem()}>Delete</button>

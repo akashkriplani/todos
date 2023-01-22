@@ -10,6 +10,7 @@ export default class TaskList extends Component {
         taskItem={task}
         deleteTaskItem={this.props.deleteTask}
         editTaskItem={this.props.editTask}
+        toggleTaskItem={this.props.toggleTask}
       />
     ));
   render() {

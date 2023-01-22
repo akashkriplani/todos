@@ -31,6 +31,12 @@ export default class Main extends Component {
     this.setState({ tasks });
   };
 
+  toggleTask = (taskId) => {
+    const taskItem = tasks[taskId];
+    taskItem.isCompleted = !taskItem.isCompleted;
+    this.setState({ tasks });
+  };
+
   render() {
     return (
       <div>
@@ -38,7 +44,12 @@ export default class Main extends Component {
         <div>
           <CreateTask createTask={this.createTask} />
           <br />
-          <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} editTask={this.editTask} />
+          <TaskList
+            tasks={this.state.tasks}
+            deleteTask={this.deleteTask}
+            editTask={this.editTask}
+            toggleTask={this.toggleTask}
+          />
         </div>
       </div>
     );
