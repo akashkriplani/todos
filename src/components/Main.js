@@ -27,7 +27,7 @@ export default class Main extends Component {
         <div>
           <CreateTask createTask={this.createTask} />
           <br />
-          <TaskList />
+          <TaskList tasks={this.state.tasks} />
         </div>
       </div>
     );
