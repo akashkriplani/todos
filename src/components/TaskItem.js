@@ -36,10 +36,10 @@ export default class TaskItem extends Component {
               </form>
             </td>
             <td>
-              <button type="submit" onClick={this.handleSubmit}>
+              <button className="save" type="submit" onClick={this.handleSubmit}>
                 Save
               </button>
-              <button type="button" onClick={() => this.setIsEditing(false)}>
+              <button className="back" type="button" onClick={() => this.setIsEditing(false)}>
                 Back
               </button>
             </td>
@@ -53,8 +53,12 @@ export default class TaskItem extends Component {
               </span>
             </td>
             <td>
-              <button onClick={() => this.setIsEditing(true)}>Edit</button>
-              <button onClick={() => this.deleteTaskItem()}>Delete</button>
+              <button className="edit" onClick={() => this.setIsEditing(true)}>
+                Edit
+              </button>
+              <button className="delete" onClick={() => this.deleteTaskItem()}>
+                Delete
+              </button>
             </td>
           </>
         )}

@@ -39,9 +39,9 @@ export default class Main extends Component {
 
   render() {
     return (
-      <div>
+      <div className="main">
         <h1>Todos</h1>
-        <div>
+        <div className="content">
           <CreateTask createTask={this.createTask} />
           <br />
           <TaskList
