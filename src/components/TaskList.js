@@ -4,7 +4,13 @@ import TaskItem from './TaskItem';
 export default class TaskList extends Component {
   renderTaskItems = () =>
     this.props.tasks.map((task, index) => (
-      <TaskItem key={index} id={index} taskItem={task} deleteTaskItem={this.props.deleteTask} />
+      <TaskItem
+        key={index}
+        id={index}
+        taskItem={task}
+        deleteTaskItem={this.props.deleteTask}
+        editTaskItem={this.props.editTask}
+      />
     ));
   render() {
     return (

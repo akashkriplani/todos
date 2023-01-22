@@ -25,6 +25,12 @@ export default class Main extends Component {
     this.setState({ tasks });
   };
 
+  editTask = (taskId, task) => {
+    const taskItem = tasks[taskId];
+    taskItem.task = task;
+    this.setState({ tasks });
+  };
+
   render() {
     return (
       <div>
@@ -32,7 +38,7 @@ export default class Main extends Component {
         <div>
           <CreateTask createTask={this.createTask} />
           <br />
-          <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} />
+          <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} editTask={this.editTask} />
         </div>
       </div>
     );
